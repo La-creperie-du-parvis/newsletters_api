@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>La Crêperie du Parvis</title>
+        <style>
+                .recipe {
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                }
+
+                .price {
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                }
+
+                .ingredients {
+                        font-size: 14px;
+                        margin-bottom: 20px;
+                }
+        </style>
+</head>
+
+<body>
+        <h1>La Crêperie du Parvis</h1>
+        <div class="recipe">
+                <h2>Recette à durée limitée</h2>
+                <p>Voici notre recette spéciale pour cette semaine :</p>
+                <p>Nom de la recette : {{recipe}}</p>
+                <p>Description de la recette : {{description}}</p>
+        </div>
+        <div class="price">
+                <h2>Seulement : {{price}}€</h2>
+                <p>Profitez de cette recette spéciale pour seulement {{price}}€ !</p>
+        </div>
+        <div class="ingredients">
+                <h2>Ingrédients</h2>
+                <p>{{ingredients}}</p>
+        </div>
+</body>
+
+</html>
