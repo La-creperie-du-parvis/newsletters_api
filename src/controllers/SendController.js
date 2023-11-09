@@ -1,17 +1,25 @@
 import nodemailer from "nodemailer";
 
-import readTemplateNewRecipe from "../libs/readTemplateNewRecipe.js";
-
+import readTemplateNewRecipe from "../libs/ReadTemplateNewRecipe.js";
+import replaceFieldsForNewRecipe from "../libs/ReplaceFieldsForNewRecipe.js";
 export const transporter = async (req, res) => {
-    console.log(readTemplateNewRecipe);
+    // console.log(readTemplateNewRecipe);
+
     const recipe = req.body.recipe;
     const description = req.body.description;
     const price = req.body.price;
-    const ingredient = req.body.ingredient;
+    const ingredients = req.body.ingredients;
+
+    readTemplateNewRecipe.recipe = recipe;
+    readTemplateNewRecipe.description = description;
+    readTemplateNewRecipe.price = price;
+    readTemplateNewRecipe.ingredients = ingredients;
+
+    replaceFieldsForNewRecipe(readTemplateNewRecipe);
 
     const maillist = [
         "maxlestage@icloud.com",
-        // "guillaumedestiny@outlook.fr",
+        "guillaumedestiny@outlook.fr",
         "maxlestage+02@icloud.com",
     ];
 
@@ -27,7 +35,7 @@ export const transporter = async (req, res) => {
         from: "guillaumedestiny@outlook.fr",
         to: maillist,
         subject: "La Crêperie du Parvis",
-        html: ``,
+        html: replaceFieldsForNewRecipe(readTemplateNewRecipe),
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
