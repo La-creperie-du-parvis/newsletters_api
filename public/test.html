@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Confirmation de réservation - La Crêperie du Parvis</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <!-- Ajoutez ici votre CSS personnalisé -->
+    </head>
+    <body>
+        <h1>Confirmation de votre réservation</h1>
+        <p>Cher(e) {{nom}},</p>
+        <p>
+            Nous vous confirmons que vous avez réservé une table pour
+            {{nbrePersonnes}} personnes le {{date}} à {{heure}}.
+        </p>
+        <p>
+            Nous vous remercions de votre réservation et nous espérons vous voir
+            bientôt.
+        </p>
+        <p>
+            Si vous souhaitez annuler votre réservation, veuillez cliquer sur ce
+            lien : <a href="{{lienAnnulation}}">Annuler la réservation</a>
+        </p>
+        <p>
+            Si vous avez des questions, n'hésitez pas à nous contacter à
+            {{email}} ou à nous suivre sur {{lienInstagram}} et
+            {{lienFacebook}}.
+        </p>
+    </body>
+</html>
