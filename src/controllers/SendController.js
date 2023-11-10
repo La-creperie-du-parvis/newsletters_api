@@ -43,7 +43,7 @@ export const transporter = async (req, res) => {
 
     const maillist = [
         "maxlestage@icloud.com",
-        "guillaumedestiny@outlook.fr",
+        // "guillaumedestiny@outlook.fr",
         "maxlestage+02@icloud.com",
     ];
 
