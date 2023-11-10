@@ -39,7 +39,10 @@ export const transporter = async (req, res) => {
     readTemplateNewRecipe.name = name;
     readTemplateNewRecipe.id_category = id_category;
 
-    let html = await replaceFieldsForNewRecipe(readTemplateNewRecipe);
+    let html = await replaceFieldsForNewRecipe(
+        readTemplateNewRecipe,
+        req.params
+    );
 
     const maillist = [
         "maxlestage@icloud.com",

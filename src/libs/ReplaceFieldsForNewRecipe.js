@@ -3,7 +3,7 @@ import fs from "fs";
 async function data(bodyFields) {
     console.log("bodyFields : ", bodyFields);
     return new Promise((resolve, reject) => {
-        fs.readFile("./public/dishes.html", "utf8", (err, html) => {
+        fs.readFile(`./public/reservation.html`, "utf8", (err, html) => {
             if (err) reject(err);
 
             for (let key in bodyFields) {
